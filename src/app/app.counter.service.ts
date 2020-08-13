@@ -10,8 +10,8 @@ export class CounterService {
 
     constructor(private http : HttpClient, private urlService : UrlService) {}
 
-    public increaseCounter () {
-        let url = this.urlService.increaseCounterUrl();
+    public hitCounter () {
+        let url = this.urlService.counterUrl();
         return this.http.get(url, {headers : {}}).pipe(map((response:any)=>{
             return response;
         }), catchError((err) => throwError(err)));

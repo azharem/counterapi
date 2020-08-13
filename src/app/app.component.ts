@@ -8,13 +8,13 @@ import {CounterService} from "./app.counter.service";
   providers: []
 })
 export class AppComponent {
-  private counter : string = 'Click on the button to increase and get counter';
+  private counter : string = 'Click on the button to get hit count';
   title = 'Counter API';
   constructor(private service : CounterService) {}
 
   public increaseCounter() {
-    this.service.increaseCounter().subscribe(data =>{
-      this.counter = JSON.stringify(data);
+    this.service.hitCounter().subscribe(data =>{
+      this.counter = JSON.stringify(data['value']);
     })
   }
 }
