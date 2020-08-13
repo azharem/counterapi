@@ -10,7 +10,7 @@ export class UrlService {
 
         constructor() {}
 
-        public get increaseCounterUrl () : string {
+        public increaseCounterUrl () : string {
             return this.baseEndpoint + this.hitPath + "/" + this.apiKey;
         }
 }

@@ -9,8 +9,12 @@
   <br/>
   <br/>
   <div align="center">
-    <button class="btn-primary">Increase counter</button>
+    <button class="btn-primary" (click)="increaseCounter()">Increase counter</button>
+    <br/>
+    <br/>
+    <h3>Counter:</h3>
+    <br/>
+    <div>{{counter}}</div>
   </div>
-
 </div>
 <router-outlet></router-outlet>

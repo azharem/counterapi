@@ -2,15 +2,16 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {catchError, map} from "rxjs/operators";
 import {throwError} from "rxjs";
+import {UrlService} from "../system/url.service";
 
 @Injectable()
 
 export class CounterService {
 
-    constructor(private http : HttpClient, private urlService) {}
+    constructor(private http : HttpClient, private urlService : UrlService) {}
 
     public increaseCounter () {
-        let url = this.urlService.increaseCounter();
+        let url = this.urlService.increaseCounterUrl();
         return this.http.get(url, {headers : {}}).pipe(map((response:any)=>{
             return response;
         }), catchError((err) => throwError(err)));
